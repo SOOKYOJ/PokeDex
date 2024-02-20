@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import './App.css';
-import KitchenSinkExample from './Card';
+import '../App.css';
+import KitchenSinkExample from '../components/Card';
 import axios from 'axios';
 
 function App() {

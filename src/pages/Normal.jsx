@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import KitchenSinkExample from './Card';
+import KitchenSinkExample from '../components/Card';
 import axios from 'axios';
 
 function Normal() {
@@ -12,6 +12,7 @@ function Normal() {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
         allPokeData.push(res.data);
       }
+      console.log(allPokeData);
       setPokeData(allPokeData.filter((poke) => poke.types.type.name.includes('normal')));
     };
     fetchData();
