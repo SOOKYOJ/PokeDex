@@ -10,9 +10,9 @@ function Normal() {
       const allPokeData = [];
       for (let i = 1; i <= 151; i++) {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
-        allPokeData.push(res);
+        allPokeData.push(res.data);
       }
-      setPokeData(allPokeData); //.filter((poke) => poke.data.types.type.name.includes('normal')));//
+      setPokeData(allPokeData.filter((poke) => poke.types.type.name.includes('normal')));
     };
     fetchData();
   }, []);
@@ -20,7 +20,7 @@ function Normal() {
   return (
     <div className="Normal">
       {pokeData.map((poke) => (
-        <KitchenSinkExample key={poke.data.id} title={poke.data.name} url={poke.data.sprites.front_default} text={poke.data.id} />
+        <KitchenSinkExample key={poke.id} title={poke.name} url={poke.sprites.front_default} text={poke.id} />
       ))}
     </div>
   );

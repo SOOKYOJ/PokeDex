@@ -10,7 +10,7 @@ function App() {
 
   const handlePoke = (e) => {
     setFindPoke(e.target.value);
-    const contrastPoke = pokeData.filter((poke) => poke.data.name.includes(e.target.value));
+    const contrastPoke = pokeData.filter((poke) => poke.name.includes(e.target.value));
     setResultPoke(contrastPoke);
   };
 
@@ -19,7 +19,7 @@ function App() {
       const allPokeData = [];
       for (let i = 1; i <= 151; i++) {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
-        allPokeData.push(res);
+        allPokeData.push(res.data);
       }
       setPokeData(allPokeData);
     };
@@ -43,7 +43,7 @@ function App() {
         <input value={findPoke} onChange={handlePoke} placeholder="Search Pokemon!"></input>
       </div>
       {resultPoke.map((poke) => (
-        <KitchenSinkExample key={poke.data.id} title={poke.data.name} url={poke.data.sprites.front_default} text={poke.data.id} />
+        <KitchenSinkExample key={poke.id} title={poke.name} url={poke.sprites.front_default} text={poke.id} />
       ))}
       <div
         style={{
