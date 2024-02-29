@@ -1,0 +1,26 @@
+.App {
+  width: 100vw;
+  height: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(https://cdn.dribbble.com/userupload/3875672/file/original-42f52449520e8e7940c668566888d84f.png?resize=752x);
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.background {
+  background-image: url(https://cdn.dribbble.com/userupload/3875672/file/original-42f52449520e8e7940c668566888d84f.png?resize=752x);
+  width: 100vw;
+  height: 100vh;
+  background-position: 'center';
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.card {
+  width: 15vw;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.01);
+  display: inline-block;
+}
